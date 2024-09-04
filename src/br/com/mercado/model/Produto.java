@@ -11,10 +11,12 @@ public class Produto {
     private double preco;
     private String tipo;
     private Date dataValidade;
+    private int quantidade;
 
-    public Produto(String nome, double preco, String tipo){
+    public Produto(String nome, double preco, String tipo, int quantidade){
         this.nome = nome;
         this.preco = preco;
         this.tipo = tipo;
+        this.quantidade = quantidade;
     }
 }

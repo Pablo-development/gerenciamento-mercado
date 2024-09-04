@@ -5,7 +5,7 @@ public class Main {
 
         Caixa caixa1 = new Caixa("1");
 
-        Produto produto1 = new Produto("Feijao", 10.00, "Consumivel");
+        Produto produto1 = new Produto("Feijao", 10.00, "Consumivel", 10);
 
         System.out.println(caixa1.passaVenda(produto1));
         System.out.println(caixa1.passaVenda(produto1));
