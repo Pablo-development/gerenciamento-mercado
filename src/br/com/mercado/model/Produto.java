@@ -1,3 +1,5 @@
+package br.com.mercado.model;
+
 import java.util.Date;
 import lombok.*;
 

@@ -1,3 +1,5 @@
+package br.com.mercado.model;
+
 import lombok.*;
 
 @Setter
