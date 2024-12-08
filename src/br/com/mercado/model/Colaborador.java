@@ -12,6 +12,4 @@ public abstract class Colaborador {
     protected String cpf;
     protected double salario;
     protected String turno;
-
-
 }

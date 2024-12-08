@@ -12,7 +12,6 @@ public class Produto {
     private String descricao;
     private double preco;
     private String tipo;
-    private Date dataValidade;
     private int quantidade;
 
     public Produto(String nome, double preco, String tipo, int quantidade){
