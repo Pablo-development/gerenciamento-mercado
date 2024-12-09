@@ -1,6 +1,5 @@
 package br.com.mercado.model;
 
-import java.util.Date;
 import lombok.*;
 
 @Setter
@@ -14,10 +13,8 @@ public class Produto {
     private String tipo;
     private int quantidade;
 
-    public Produto(String nome, double preco, String tipo, int quantidade){
+    public Produto(String nome, int quantidade){
         this.nome = nome;
-        this.preco = preco;
-        this.tipo = tipo;
         this.quantidade = quantidade;
     }
 }

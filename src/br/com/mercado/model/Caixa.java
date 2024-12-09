@@ -1,5 +1,6 @@
 package br.com.mercado.model;
 
+
 import exception.ValorInvalidoException;
 import exception.SaldoInsuficienteException;
 import lombok.Getter;
@@ -58,20 +59,25 @@ public class Caixa {
         if (valor < 0) {
             throw new ValorInvalidoException("O valor a ser adicionado não pode ser negativo.");
         }
-
         saldoCaixa += valor;
         System.out.println("Valor adicionado: R$ " + valor);
         System.out.println("Saldo atual em caixa: R$ " + saldoCaixa);
     }
 
-    public List<Produto> extrato() {
+    public void extrato() {
         System.out.println("Produtos: ");
         listaCompras.forEach(produto -> System.out.println("- " + produto.getNome() + " | Preço: R$ " + produto.getPreco()));
         System.out.println("Total da compra: R$ " + totalCompra);
-        return new ArrayList<>(listaCompras);
     }
 
-    public void processaPagamento(int formaPagamento) {
+
+    //Tem que passar estoque como argumento para dar baixa, ja que não utilizamos db
+    public void processaPagamento(int formaPagamento, Estoque estoque) {
+
+        //criei esses objetos só pra funcionar a lógica momentameneamente, mas não está como gostaria
+        FuncionarioCaixa f1 = new FuncionarioCaixa("Pablo");
+        Caixa c1 = new Caixa("1", f1);
+
         if (listaCompras.isEmpty()) {
             System.out.println("Nenhum produto na lista de compras. Adicione produtos antes de processar o pagamento.");
             return;
@@ -89,6 +95,8 @@ public class Caixa {
             default:
                 System.out.println("Forma de pagamento inválida.");
         }
+
+        estoque.retiraQuantidadeEstoque(c1);
 
         totalCompra = 0;
         listaCompras.clear();

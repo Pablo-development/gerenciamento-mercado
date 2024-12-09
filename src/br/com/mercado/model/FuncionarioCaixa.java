@@ -6,10 +6,7 @@ import lombok.*;
 @Setter
 @ToString
 public class FuncionarioCaixa extends Colaborador {
-    public FuncionarioCaixa(String name, String cpf, double salario, String turno){
+    public FuncionarioCaixa(String name){
         this.name = name;
-        this.cpf = cpf;
-        this.salario = salario;
-        this.turno = turno;
     }
 }
